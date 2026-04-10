@@ -52,7 +52,7 @@ export function TestimonialSection() {
               <p className="font-mono text-[11px] uppercase tracking-widest text-ink/40">
                 Challenge
               </p>
-              <p className="mt-2 text-sm text-ink/60">{t.challenge}</p>
+              <p className="mt-2 text-sm text-ink-muted">{t.challenge}</p>
 
               <div className="my-6 rounded-lg bg-teal/10 px-4 py-3">
                 <p className="text-lg font-semibold text-teal">{t.result}</p>

@@ -54,7 +54,7 @@ export function HeroSection() {
                 <em className="text-teal">It's all we do.</em>
               </h1>
 
-              <p className="mt-8 max-w-md text-lg leading-relaxed text-ink/60 md:text-xl">
+              <p className="mt-8 max-w-md text-lg leading-relaxed text-ink-muted md:text-xl">
                 From Epic and EHR to AI and analytics, we connect health systems with the
                 specialized IT talent they need — on their terms.
               </p>

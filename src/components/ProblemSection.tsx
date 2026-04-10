@@ -40,7 +40,7 @@ export function ProblemSection() {
               style={{ transitionDelay: `${(i + 2) * 150}ms` }}
             >
               <h3 className="text-xl font-semibold text-foreground">{point.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{point.body}</p>
+              <p className="mt-3 text-sm leading-relaxed text-warm-gray">{point.body}</p>
             </div>
           ))}
         </div>
