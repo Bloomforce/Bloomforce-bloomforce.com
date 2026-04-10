@@ -16,14 +16,14 @@ export function ServicesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="services" ref={ref} className="border-t border-border/50 bg-navy-dark py-24 md:py-36">
+    <section id="services" ref={ref} className="bg-cream py-24 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-primary">
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
             What We Do
           </p>
-          <h2 className="font-display text-4xl leading-tight md:text-6xl">
-            What we do <em className="text-primary">for you</em>
+          <h2 className="font-display text-4xl leading-tight text-ink md:text-6xl">
+            What we do <em className="text-teal">for you</em>
           </h2>
         </div>
 
@@ -31,26 +31,26 @@ export function ServicesSection() {
           {services.map((svc, i) => (
             <div
               key={svc.title}
-              className={`group rounded-xl border border-border/50 bg-card p-8 transition-all duration-500 hover:border-primary/50 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`group rounded-xl border border-ink/10 bg-white p-8 transition-all duration-500 hover:border-teal/40 hover:shadow-lg ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${(i + 1) * 100}ms` }}
             >
-              <svc.icon className="mb-4 h-6 w-6 text-primary" />
-              <h3 className="text-lg font-semibold text-foreground">{svc.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{svc.desc}</p>
-              <span className="mt-4 inline-block font-mono text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
+              <svc.icon className="mb-4 h-6 w-6 text-teal" />
+              <h3 className="text-lg font-semibold text-ink">{svc.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/60">{svc.desc}</p>
+              <span className="mt-4 inline-block font-mono text-xs text-teal opacity-0 transition-opacity group-hover:opacity-100">
                 Learn More →
               </span>
             </div>
           ))}
         </div>
 
-        <div className={`mt-12 rounded-xl bg-navy p-8 md:p-12 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+        <div className={`mt-12 rounded-xl border border-ink/10 bg-stone p-8 md:p-12 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink/50">
             How We Engage
           </h3>
           <div className="mt-6 flex flex-wrap gap-4">
             {engagements.map((e) => (
-              <span key={e} className="rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-medium text-primary">
+              <span key={e} className="rounded-full border border-teal/30 bg-teal/10 px-5 py-2 text-sm font-medium text-teal">
                 {e}
               </span>
             ))}

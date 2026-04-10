@@ -11,7 +11,7 @@ export function StatsStrip() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="border-y border-border/50 bg-navy-dark py-16">
+    <section ref={ref} className="border-y border-ink/10 bg-cream-dark py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
         {stats.map((stat, i) => (
           <div
@@ -19,8 +19,8 @@ export function StatsStrip() {
             className={`text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             style={{ transitionDelay: `${i * 150}ms` }}
           >
-            <div className="font-display text-4xl text-primary md:text-5xl">{stat.value}</div>
-            <div className="mt-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+            <div className="font-display text-4xl text-teal md:text-5xl">{stat.value}</div>
+            <div className="mt-2 font-mono text-[11px] uppercase tracking-widest text-ink/50">
               {stat.label}
             </div>
           </div>

@@ -24,17 +24,17 @@ export function WhyBloomforce() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="why" ref={ref} className="py-24 md:py-36">
+    <section id="why" ref={ref} className="bg-stone py-24 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-primary">
+            <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
               Why Bloomforce
             </p>
-            <h2 className="font-display text-4xl leading-tight md:text-5xl">
+            <h2 className="font-display text-4xl leading-tight text-ink md:text-5xl">
               The boutique alternative to
               <br />
-              <em className="text-primary">big-firm staffing.</em>
+              <em className="text-teal">big-firm staffing.</em>
             </h2>
 
             <div className="mt-12 space-y-8">
@@ -44,12 +44,12 @@ export function WhyBloomforce() {
                   className={`flex gap-5 transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"}`}
                   style={{ transitionDelay: `${(i + 2) * 200}ms` }}
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <d.icon className="h-5 w-5 text-primary" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-teal/10">
+                    <d.icon className="h-5 w-5 text-teal" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">{d.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{d.body}</p>
+                    <h3 className="text-lg font-semibold text-ink">{d.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink/60">{d.body}</p>
                   </div>
                 </div>
               ))}

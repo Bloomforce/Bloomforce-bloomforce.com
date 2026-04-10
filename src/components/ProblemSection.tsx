@@ -19,16 +19,16 @@ export function ProblemSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-36">
+    <section ref={ref} className="bg-navy-dark py-24 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className={`max-w-3xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-primary">
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
             The Problem
           </p>
-          <h2 className="font-display text-4xl leading-tight md:text-6xl">
+          <h2 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
             Finding talent isn't hard.
             <br />
-            <em className="text-primary">Keeping your pipeline full is.</em>
+            <em className="text-teal">Keeping your pipeline full is.</em>
           </h2>
         </div>
 
@@ -36,7 +36,7 @@ export function ProblemSection() {
           {painPoints.map((point, i) => (
             <div
               key={point.title}
-              className={`rounded-xl border-l-4 border-primary bg-card p-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`rounded-xl border-l-4 border-teal bg-navy/80 p-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${(i + 2) * 150}ms` }}
             >
               <h3 className="text-xl font-semibold text-foreground">{point.title}</h3>
@@ -45,7 +45,7 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <p className={`mt-12 max-w-2xl text-xl italic font-medium text-primary transition-all duration-1000 delay-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+        <p className={`mt-12 max-w-2xl text-xl italic font-medium text-teal transition-all duration-1000 delay-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
           "Our fix: a specialist talent engine built exclusively for healthcare IT."
         </p>
       </div>
