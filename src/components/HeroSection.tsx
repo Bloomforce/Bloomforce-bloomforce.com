@@ -34,8 +34,8 @@ export function HeroSection() {
   const gap = 8;
 
   return (
-    <section ref={ref} className="relative" style={{ height: "115vh" }}>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden bg-cream pt-12 pb-8">
+    <section ref={ref} className="relative" style={{ height: "105vh" }}>
+      <div className="sticky top-0 flex min-h-0 items-center overflow-hidden bg-cream pt-4 pb-4" style={{ height: "85vh" }}>
         {/* Background glow */}
         <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-bl from-teal/5 to-transparent" />
         <div className="pointer-events-none absolute bottom-20 right-20 h-64 w-64 rounded-full bg-teal/5 blur-3xl" />
