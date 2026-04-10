@@ -58,6 +58,7 @@
   --color-warm-gray: var(--warm-gray);
   --color-warm-gray-light: var(--warm-gray-light);
   --color-purple-accent: var(--purple-accent);
+  --color-ink-muted: var(--ink-muted);
   --font-display: 'DM Serif Display', serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -111,6 +112,7 @@
   --cream-dark: oklch(0.93 0.018 65);
   --stone: oklch(0.89 0.02 60);
   --ink: oklch(0.18 0.02 50);
+  --ink-muted: oklch(0.35 0.02 50);
 }
 
 @layer base {
