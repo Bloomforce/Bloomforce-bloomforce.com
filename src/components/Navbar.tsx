@@ -23,7 +23,7 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="font-mono text-xs uppercase tracking-widest text-ink/50 transition-colors hover:text-teal"
+              className="text-sm font-medium tracking-wide text-ink/70 transition-colors hover:text-teal"
             >
               {link.label}
             </a>
@@ -49,7 +49,7 @@ export function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block py-3 font-mono text-xs uppercase tracking-widest text-ink/50"
+              className="block py-3 text-sm font-medium tracking-wide text-ink/70"
             >
               {link.label}
             </a>

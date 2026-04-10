@@ -55,15 +55,16 @@ export function ServicesSection() {
           ))}
         </div>
 
-        <div className={`mt-12 rounded-xl border border-ink/10 bg-stone p-8 md:p-12 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink/50">
+        <div className={`mt-16 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink/50 mb-8">
             How We Engage
           </h3>
-          <div className="mt-6 flex flex-wrap gap-4">
-            {engagements.map((e) => (
-              <span key={e} className="rounded-full border border-teal/30 bg-teal/10 px-5 py-2 text-sm font-medium text-teal">
-                {e}
-              </span>
+          <div className="grid gap-px bg-ink/10 sm:grid-cols-3 rounded-xl overflow-hidden">
+            {engagements.map((e, i) => (
+              <div key={e} className="bg-cream px-8 py-8 text-center transition-colors hover:bg-stone">
+                <span className="block font-mono text-xs text-teal mb-2">0{i + 1}</span>
+                <span className="text-lg font-semibold text-ink">{e}</span>
+              </div>
             ))}
           </div>
         </div>
