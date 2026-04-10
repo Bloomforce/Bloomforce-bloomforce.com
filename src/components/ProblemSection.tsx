@@ -39,13 +39,13 @@ export function ProblemSection() {
               className={`rounded-xl border-l-4 border-primary bg-card p-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${(i + 2) * 150}ms` }}
             >
-              <h3 className="font-display text-xl text-foreground">{point.title}</h3>
+              <h3 className="text-xl font-semibold text-foreground">{point.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{point.body}</p>
             </div>
           ))}
         </div>
 
-        <p className={`mt-12 max-w-2xl font-display text-xl italic text-primary transition-all duration-1000 delay-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+        <p className={`mt-12 max-w-2xl text-xl italic font-medium text-primary transition-all duration-1000 delay-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
           "Our fix: a specialist talent engine built exclusively for healthcare IT."
         </p>
       </div>

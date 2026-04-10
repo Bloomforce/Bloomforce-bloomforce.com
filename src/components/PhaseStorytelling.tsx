@@ -46,7 +46,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0]; index: number })
       <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6">
         <span className="font-display text-6xl text-primary/30 md:text-8xl">{phase.num}</span>
         <div>
-          <h3 className="font-display text-2xl text-foreground md:text-3xl">{phase.title}</h3>
+          <h3 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">{phase.title}</h3>
           <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
             {phase.timeline}
           </span>
