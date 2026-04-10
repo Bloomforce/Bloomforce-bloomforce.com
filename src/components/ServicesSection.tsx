@@ -35,7 +35,7 @@ export function ServicesSection() {
               style={{ transitionDelay: `${(i + 1) * 100}ms` }}
             >
               <svc.icon className="mb-4 h-6 w-6 text-primary" />
-              <h3 className="font-display text-lg text-foreground">{svc.title}</h3>
+              <h3 className="text-lg font-semibold text-foreground">{svc.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{svc.desc}</p>
               <span className="mt-4 inline-block font-mono text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
                 Learn More →

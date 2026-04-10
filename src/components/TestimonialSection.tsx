@@ -55,10 +55,10 @@ export function TestimonialSection() {
               <p className="mt-2 text-sm text-muted-foreground">{t.challenge}</p>
 
               <div className="my-6 rounded-lg bg-primary/10 px-4 py-3">
-                <p className="font-display text-lg text-primary">{t.result}</p>
+                <p className="text-lg font-semibold text-primary">{t.result}</p>
               </div>
 
-              <p className="flex-1 font-display text-base italic leading-relaxed text-foreground">
+              <p className="flex-1 text-base italic leading-relaxed text-foreground">
                 "{t.quote}"
               </p>
 

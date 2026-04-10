@@ -35,7 +35,7 @@ export function SiteFooter() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div>
-              <h3 className="font-display text-xl text-foreground">Stay in the loop.</h3>
+              <h3 className="text-xl font-semibold text-foreground">Stay in the loop.</h3>
               <p className="mt-1 text-sm text-muted-foreground">Healthcare IT workforce insights, delivered monthly.</p>
             </div>
             <div className="flex w-full max-w-sm gap-2">

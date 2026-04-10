@@ -48,7 +48,7 @@ export function WhyBloomforce() {
                     <d.icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg text-foreground">{d.title}</h3>
+                    <h3 className="text-lg font-semibold text-foreground">{d.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{d.body}</p>
                   </div>
                 </div>
