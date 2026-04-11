@@ -1,16 +1,35 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Monitor, Server, Brain, Cloud, Users, ClipboardList } from "lucide-react";
+import { Briefcase, UserCheck, Crown } from "lucide-react";
 
-const services = [
-  { icon: Monitor, title: "Epic / EHR", desc: "Certified Epic consultants, EHR analysts, trainers, and go-live support specialists." },
-  { icon: Server, title: "Enterprise Applications", desc: "ServiceNow, Salesforce, Workday, and Oracle implementation and support talent." },
-  { icon: Brain, title: "AI & Data Analytics", desc: "Data engineers, ML specialists, and analytics leaders driving clinical insights." },
-  { icon: Cloud, title: "IT Infrastructure & Cloud", desc: "Cloud architects, network engineers, and cybersecurity professionals." },
-  { icon: Users, title: "IT Leadership Search", desc: "CIOs, CTOs, CISOs, and VP-level technology leaders for health systems." },
-  { icon: ClipboardList, title: "PMO & Project Management", desc: "Program managers, project leads, and transformation office talent." },
+const practices = [
+  {
+    icon: Briefcase,
+    title: "Staffing",
+    tag: "Contract & Contract-to-Hire",
+    desc: "Specialist consultants for the projects that can't slow down — go-lives, migrations, stabilizations, and backfill. Deployed in days, not months.",
+    href: "#staffing",
+  },
+  {
+    icon: UserCheck,
+    title: "Direct Placement",
+    tag: "Permanent Hires",
+    desc: "Full-time hires for mission-critical IT roles — analysts, engineers, architects, and managers. We find the person you'll still be thanking us for two years from now.",
+    href: "#direct-placement",
+  },
+  {
+    icon: Crown,
+    title: "Leadership Search",
+    tag: "Director Through CIO",
+    desc: "Retained search for the tier that actually runs healthcare IT — Director, Sr. Director, Executive Director, VP, AVP, and CIO. Quiet, rigorous, and built around fit.",
+    href: "#leadership-search",
+  },
 ];
 
-const engagements = ["Staff Augmentation", "Contract-to-Hire", "Direct Placement"];
+const engagements = [
+  { num: "01", title: "Staffing", subtitle: "Contract & contract-to-hire" },
+  { num: "02", title: "Direct Placement", subtitle: "Permanent hires" },
+  { num: "03", title: "Leadership Search", subtitle: "Director through CIO" },
+];
 
 export function ServicesSection() {
   const { ref, isVisible } = useScrollReveal();
@@ -20,50 +39,61 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
-            Our Offering
+            What We Do
           </p>
           <h2 className="font-display text-4xl leading-tight text-ink md:text-6xl">
-            What we do <em className="text-teal">for you.</em>
+            Three practices. <em className="text-teal">One focus.</em>
           </h2>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted">
-            Bloomforce connects health systems with the specialized IT talent they need — from Epic go-lives to enterprise-wide digital transformation. We combine deep healthcare expertise, a curated talent network, and a relentless sense of urgency.
+            Bloomforce is a boutique healthcare IT staffing and search firm. We place
+            specialist consultants on the projects that can't slow down, and run retained
+            searches for the tier that actually runs healthcare IT — from Director through
+            CIO. That's it. No generalist staffing, no clinical recruiting, no adjacent
+            side-hustles. One industry. Three ways to hire.
           </p>
         </div>
 
-        {/* Lazio-style highlight banner */}
+        {/* Highlight banner */}
         <div className={`mt-12 rounded-xl bg-ink px-8 py-10 md:px-12 md:py-14 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <p className="font-display text-2xl leading-snug text-cream md:text-4xl">
-            We source, vet, and place healthcare IT professionals — Epic, EHR, AI, security, and leadership.{" "}
-            <em className="text-teal">You focus on patient care.</em>
+            Three practices, one specialty.{" "}
+            <em className="text-teal">You run the roadmap. We build the team.</em>
           </p>
         </div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((svc, i) => (
-            <div
-              key={svc.title}
-              className={`group rounded-xl border border-ink/10 bg-white p-8 transition-all duration-500 hover:border-teal/40 hover:shadow-lg ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: `${(i + 1) * 100}ms` }}
+        {/* Three practice cards */}
+        <div className="mt-16 grid gap-4 md:grid-cols-3">
+          {practices.map((p, i) => (
+            <a
+              key={p.title}
+              href={p.href}
+              className={`group flex flex-col rounded-xl border border-ink/10 bg-white p-8 transition-all duration-500 hover:border-teal/40 hover:shadow-lg ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: `${(i + 1) * 120}ms` }}
             >
-              <svc.icon className="mb-4 h-6 w-6 text-teal" />
-              <h3 className="text-lg font-semibold text-ink">{svc.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{svc.desc}</p>
-              <span className="mt-4 inline-block font-mono text-xs text-teal opacity-0 transition-opacity group-hover:opacity-100">
+              <p.icon className="mb-4 h-7 w-7 text-teal" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40">
+                {p.tag}
+              </span>
+              <h3 className="mt-1 font-display text-2xl text-ink">{p.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{p.desc}</p>
+              <span className="mt-6 inline-block font-mono text-xs text-teal transition-all group-hover:translate-x-1">
                 Learn More →
               </span>
-            </div>
+            </a>
           ))}
         </div>
 
+        {/* Engagement tiles */}
         <div className={`mt-16 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink/50 mb-8">
-            How We Engage
+            Three Ways to Hire
           </h3>
           <div className="grid gap-px bg-ink/10 sm:grid-cols-3 rounded-xl overflow-hidden">
-            {engagements.map((e, i) => (
-              <div key={e} className="bg-cream px-8 py-8 text-center transition-colors hover:bg-stone">
-                <span className="block font-mono text-xs text-teal mb-2">0{i + 1}</span>
-                <span className="text-lg font-semibold text-ink">{e}</span>
+            {engagements.map((e) => (
+              <div key={e.title} className="bg-cream px-8 py-8 text-center transition-colors hover:bg-stone">
+                <span className="block font-mono text-xs text-teal mb-2">{e.num}</span>
+                <span className="block text-lg font-semibold text-ink">{e.title}</span>
+                <span className="mt-1 block text-xs text-ink-muted">{e.subtitle}</span>
               </div>
             ))}
           </div>
