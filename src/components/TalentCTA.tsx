@@ -16,11 +16,13 @@ export function TalentCTA() {
           <h2 className="mx-auto max-w-2xl font-display text-4xl leading-tight text-foreground md:text-5xl">
             Looking for your next
             <br />
-            <em className="text-teal">healthcare IT opportunity?</em>
+            <em className="text-teal">healthcare IT role?</em>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            Join a network of 500+ professionals working with top health systems
-            across the country. We match your skills to roles that matter.
+            Whether you're a consultant between projects, a full-time hire looking for
+            your next seat, or a leader ready to run the whole show — we work with
+            healthcare IT professionals at every level. No generic job boards. No blind
+            submissions. Just specialists talking to specialists.
           </p>
 
           <div className="mt-8 flex justify-center -space-x-3">
@@ -32,23 +34,23 @@ export function TalentCTA() {
                 className="h-12 w-12 rounded-full border-2 border-navy-dark object-cover"
               />
             ))}
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-navy-dark bg-teal text-xs font-bold text-white">
-              500+
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-navy-dark bg-teal/80 text-[10px] font-bold text-white">
+              Join
             </div>
           </div>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              href="#"
+              href="#for-talent"
               className="inline-flex items-center justify-center rounded-full bg-teal px-8 py-4 text-sm font-semibold text-white transition-all hover:brightness-110"
             >
               Join Our Network
             </a>
             <a
-              href="#"
+              href="#for-talent-jobs"
               className="inline-flex items-center justify-center rounded-full border border-foreground/20 px-8 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/5"
             >
-              View Open Positions →
+              View Open Roles →
             </a>
           </div>
         </div>

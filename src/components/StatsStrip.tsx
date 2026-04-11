@@ -1,10 +1,21 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const stats = [
-  { value: "500+", label: "Professionals Placed" },
-  { value: "50+", label: "Health Systems Served" },
-  { value: "98%", label: "Retention Rate" },
-  { value: "24/7", label: "Talent Pipeline Active" },
+/*
+ * Technology logo strip.
+ * Swap these text nodes for real SVG/image logos as they become available.
+ * Keeping text-only keeps us vendor-license-safe until assets are procured.
+ */
+const platforms = [
+  "Epic",
+  "Workday",
+  "Oracle / Cerner",
+  "ServiceNow",
+  "MEDITECH",
+  "Infor",
+  "AWS",
+  "Azure",
+  "Salesforce",
+  "Google Cloud",
 ];
 
 export function StatsStrip() {
@@ -12,19 +23,30 @@ export function StatsStrip() {
 
   return (
     <section ref={ref} className="border-y border-ink/10 bg-cream-dark py-16">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
-        {stats.map((stat, i) => (
-          <div
-            key={stat.label}
-            className={`text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-            style={{ transitionDelay: `${i * 150}ms` }}
-          >
-            <div className="font-display text-4xl text-teal md:text-5xl">{stat.value}</div>
-            <div className="mt-2 font-mono text-[11px] uppercase tracking-widest text-ink/50">
-              {stat.label}
+      <div className="mx-auto max-w-7xl px-6">
+        <p
+          className={`mb-10 text-center font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          We specialize in the technology you already use
+        </p>
+
+        <div className="grid grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-3 md:grid-cols-5">
+          {platforms.map((name, i) => (
+            <div
+              key={name}
+              className={`flex items-center justify-center transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              <span className="font-display text-lg tracking-tight text-ink/60 md:text-xl">
+                {name}
+              </span>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

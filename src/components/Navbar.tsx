@@ -1,11 +1,54 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown, Monitor, Server, Brain, Cloud, Users, ClipboardList, ArrowRight, BookOpen, FileText, Newspaper } from "lucide-react";
+import { Menu, X, ChevronDown, Monitor, Server, Brain, Cloud, Users, ClipboardList, ArrowRight, BookOpen, FileText, Newspaper, Briefcase, UserCheck, Crown } from "lucide-react";
 import logoColor from "@/assets/logo-color.png";
 import salaryReportCover from "@/assets/salary-report-cover.jpg";
 import blogCover from "@/assets/blog-cover.jpg";
 
-/* ─── Solutions Data ─── */
-const solutions = [
+/* ─── Practices (how we engage) ─── */
+const practices = [
+  {
+    icon: Briefcase,
+    title: "Staffing",
+    subtitle: "CONTRACT & CONTRACT-TO-HIRE",
+    description: "Specialist consultants for the projects that can't slow down — go-lives, migrations, stabilizations, and backfill. Deployed in days, not months.",
+    features: [
+      { label: "Go-Live & Project Surge", desc: "Teams ready in under two weeks" },
+      { label: "Contract-to-Hire", desc: "Try the fit before you commit" },
+      { label: "Interim Coverage", desc: "Hold the line while you search" },
+    ],
+    cta: "Need help on a live project?",
+    href: "#staffing",
+  },
+  {
+    icon: UserCheck,
+    title: "Direct Placement",
+    subtitle: "PERMANENT HIRES",
+    description: "Full-time hires for mission-critical IT roles — analysts, engineers, architects, and managers. We find the person you'll still be thanking us for two years from now.",
+    features: [
+      { label: "Individual Contributors", desc: "Analysts, engineers, architects" },
+      { label: "People Managers", desc: "Team leads and managers" },
+      { label: "Retention-First", desc: "Vetted for fit, not just skills" },
+    ],
+    cta: "Filling a full-time seat?",
+    href: "#direct-placement",
+  },
+  {
+    icon: Crown,
+    title: "Leadership Search",
+    subtitle: "DIRECTOR THROUGH CIO",
+    description: "Retained search for the tier that actually runs healthcare IT — Director, Sr. Director, Executive Director, VP, AVP, and CIO. Quiet, rigorous, and built around fit.",
+    features: [
+      { label: "Director \u2192 VP", desc: "The operators who run the org" },
+      { label: "AVP & Executive Director", desc: "The hardest-to-fill middle" },
+      { label: "CIO Search", desc: "For the top of the org chart" },
+    ],
+    cta: "Hiring your next IT leader?",
+    href: "#leadership-search",
+  },
+];
+
+/* ─── Practice Areas (what we specialize in) ─── */
+const practiceAreas = [
   {
     icon: Monitor,
     title: "Epic / EHR",
@@ -17,6 +60,7 @@ const solutions = [
       { label: "Training & Adoption", desc: "End-user training programs" },
     ],
     cta: "Need Epic talent?",
+    href: "#practice-epic",
   },
   {
     icon: Server,
@@ -29,6 +73,7 @@ const solutions = [
       { label: "Workday & Oracle", desc: "HCM and ERP specialists" },
     ],
     cta: "Need enterprise app talent?",
+    href: "#practice-enterprise-apps",
   },
   {
     icon: Brain,
@@ -41,35 +86,25 @@ const solutions = [
       { label: "BI & Reporting", desc: "Dashboards and executive analytics" },
     ],
     cta: "Need data & AI talent?",
+    href: "#practice-ai-data",
   },
   {
     icon: Cloud,
     title: "Infrastructure",
-    subtitle: "CLOUD & SECURITY",
-    description: "Cloud architects, network engineers, and cybersecurity professionals securing and scaling health system IT.",
+    subtitle: "CLOUD, NETWORK & SECURITY",
+    description: "Cloud architects, network engineers, and security professionals securing and scaling health system IT.",
     features: [
-      { label: "Cloud Migration", desc: "AWS, Azure, GCP architects" },
-      { label: "Cybersecurity", desc: "SOC analysts, pen testers, CISOs" },
+      { label: "Cloud", desc: "AWS, Azure, and GCP architects" },
       { label: "Network & DevOps", desc: "Infrastructure automation" },
+      { label: "Security", desc: "Engineers, analysts, and architects" },
     ],
     cta: "Need infrastructure talent?",
-  },
-  {
-    icon: Users,
-    title: "IT Leadership",
-    subtitle: "EXECUTIVE SEARCH",
-    description: "CIOs, CTOs, CISOs, and VP-level technology leaders for health systems undergoing digital transformation.",
-    features: [
-      { label: "C-Suite Search", desc: "CIO, CTO, CISO placements" },
-      { label: "VP & Director", desc: "IT leadership pipeline" },
-      { label: "Advisory", desc: "Interim and fractional leaders" },
-    ],
-    cta: "Need IT leadership?",
+    href: "#practice-infrastructure",
   },
   {
     icon: ClipboardList,
     title: "PMO",
-    subtitle: "PROJECT MANAGEMENT",
+    subtitle: "PROJECT & PROGRAM MANAGEMENT",
     description: "Program managers, project leads, and transformation office talent keeping complex initiatives on track.",
     features: [
       { label: "Program Management", desc: "Multi-workstream coordination" },
@@ -77,6 +112,7 @@ const solutions = [
       { label: "Change Management", desc: "Adoption and training leads" },
     ],
     cta: "Need PMO talent?",
+    href: "#practice-pmo",
   },
 ];
 
@@ -111,22 +147,27 @@ const insights = [
   },
 ];
 
-/* ─── Solutions Mega Menu ─── */
+/* ─── What We Do Mega Menu ─── */
+type MenuItem = (typeof practices)[number] | (typeof practiceAreas)[number];
+
 function SolutionsMegaMenu({ onClose }: { onClose: () => void }) {
+  // Combined list: practices first, then practice areas
+  const allItems: MenuItem[] = [...practices, ...practiceAreas];
   const [activeIndex, setActiveIndex] = useState(0);
-  const active = solutions[activeIndex];
+  const active = allItems[activeIndex];
 
   return (
     <div className="absolute left-0 right-0 top-full z-50 border-b border-ink/10 bg-cream shadow-2xl shadow-ink/10">
       <div className="mx-auto flex max-w-7xl">
-        {/* Left column — nav items */}
-        <div className="w-[340px] shrink-0 border-r border-ink/8 bg-stone/40 py-4">
+        {/* Left column — two-section nav */}
+        <div className="w-[360px] shrink-0 border-r border-ink/8 bg-stone/40 py-4">
+          {/* Section 1: Practices (how we engage) */}
           <p className="mb-3 px-6 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40">
-            Core Capabilities
+            How We Engage
           </p>
-          {solutions.map((s, i) => (
+          {practices.map((p, i) => (
             <button
-              key={s.title}
+              key={p.title}
               onMouseEnter={() => setActiveIndex(i)}
               onClick={onClose}
               className={`flex w-full items-center gap-4 px-6 py-3.5 text-left transition-all duration-200 ${
@@ -135,13 +176,13 @@ function SolutionsMegaMenu({ onClose }: { onClose: () => void }) {
                   : "hover:bg-cream/60"
               }`}
             >
-              <s.icon className={`h-5 w-5 shrink-0 transition-colors ${i === activeIndex ? "text-teal" : "text-ink/30"}`} />
+              <p.icon className={`h-5 w-5 shrink-0 transition-colors ${i === activeIndex ? "text-teal" : "text-ink/30"}`} />
               <div>
                 <span className={`block text-[15px] font-semibold transition-colors ${i === activeIndex ? "text-ink" : "text-ink/70"}`}>
-                  {s.title}
+                  {p.title}
                 </span>
                 <span className="block font-mono text-[10px] uppercase tracking-wider text-ink/40">
-                  {s.subtitle}
+                  {p.subtitle}
                 </span>
               </div>
               {i === activeIndex && (
@@ -149,6 +190,40 @@ function SolutionsMegaMenu({ onClose }: { onClose: () => void }) {
               )}
             </button>
           ))}
+
+          {/* Divider + Section 2: Practice Areas (what we specialize in) */}
+          <p className="mt-5 mb-3 px-6 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40">
+            Where We Specialize
+          </p>
+          {practiceAreas.map((s, i) => {
+            const index = practices.length + i;
+            return (
+              <button
+                key={s.title}
+                onMouseEnter={() => setActiveIndex(index)}
+                onClick={onClose}
+                className={`flex w-full items-center gap-4 px-6 py-3.5 text-left transition-all duration-200 ${
+                  index === activeIndex
+                    ? "bg-cream border-r-2 border-teal"
+                    : "hover:bg-cream/60"
+                }`}
+              >
+                <s.icon className={`h-5 w-5 shrink-0 transition-colors ${index === activeIndex ? "text-teal" : "text-ink/30"}`} />
+                <div>
+                  <span className={`block text-[15px] font-semibold transition-colors ${index === activeIndex ? "text-ink" : "text-ink/70"}`}>
+                    {s.title}
+                  </span>
+                  <span className="block font-mono text-[10px] uppercase tracking-wider text-ink/40">
+                    {s.subtitle}
+                  </span>
+                </div>
+                {index === activeIndex && (
+                  <ChevronDown className="ml-auto h-4 w-4 -rotate-90 text-teal" />
+                )}
+              </button>
+            );
+          })}
+
           <div className="mx-6 mt-4">
             <a
               href="#services"
@@ -183,11 +258,11 @@ function SolutionsMegaMenu({ onClose }: { onClose: () => void }) {
           <div className="mt-8 flex items-center justify-between rounded-lg bg-stone/60 px-6 py-4">
             <span className="text-sm text-ink/70">{active.cta}</span>
             <a
-              href="#contact"
+              href={active.href || "#contact"}
               onClick={onClose}
               className="flex items-center gap-2 font-semibold text-teal transition-colors hover:text-teal-light"
             >
-              Get in Touch <ArrowRight size={16} />
+              Learn More <ArrowRight size={16} />
             </a>
           </div>
         </div>
@@ -349,7 +424,7 @@ export function Navbar() {
               </a>
             ))}
 
-            {/* Solutions trigger */}
+            {/* What We Do trigger */}
             <button
               onMouseEnter={() => openMenu("solutions")}
               onMouseLeave={startClose}
@@ -357,7 +432,7 @@ export function Navbar() {
                 activeMenu === "solutions" ? "text-teal" : "text-ink/80 hover:text-teal"
               }`}
             >
-              Services
+              What We Do
               <ChevronDown
                 size={14}
                 className={`transition-transform duration-200 ${activeMenu === "solutions" ? "rotate-180" : ""}`}
@@ -420,7 +495,14 @@ export function Navbar() {
               </a>
             ))}
 
-            <MobileAccordion title="Services" items={solutions.map(s => ({ label: s.title, href: "#services" }))} onClose={() => setMobileOpen(false)} />
+            <MobileAccordion
+              title="What We Do"
+              items={[
+                ...practices.map(p => ({ label: p.title, href: p.href })),
+                ...practiceAreas.map(s => ({ label: s.title, href: s.href })),
+              ]}
+              onClose={() => setMobileOpen(false)}
+            />
             <MobileAccordion title="Insights" items={insights.map(s => ({ label: s.title, href: "#" }))} onClose={() => setMobileOpen(false)} />
 
             <a

@@ -6,12 +6,12 @@ const differentiators = [
   {
     icon: Target,
     title: "Specialist Focus",
-    body: "We don't do general staffing. Every recruiter, every candidate, every process is built for healthcare IT.",
+    body: "We don't do general staffing. Every recruiter, every candidate, every process is built for healthcare IT — and nothing else.",
   },
   {
     icon: Shuffle,
     title: "Flexible Engagement",
-    body: "Staff augmentation, contract-to-hire, or direct placement. Your timeline, your terms.",
+    body: "Three ways to hire: staffing, direct placement, and leadership search. Pick the model that fits the role — or use all three.",
   },
   {
     icon: Network,
