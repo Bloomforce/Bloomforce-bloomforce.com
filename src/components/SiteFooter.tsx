@@ -1,4 +1,3 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import logoWhite from "@/assets/logo-white.png";
 import { Linkedin, Twitter, Mail } from "lucide-react";
 
@@ -6,77 +5,52 @@ const footerNav = [
   {
     heading: "What We Do",
     links: [
-      { label: "Staffing", href: "#staffing" },
-      { label: "Direct Placement", href: "#direct-placement" },
-      { label: "Leadership Search", href: "#leadership-search" },
-      { label: "All Practices", href: "#services" },
+      { label: "Staffing", href: "/staffing" },
+      { label: "Direct Placement", href: "/direct-placement" },
+      { label: "Leadership Search", href: "/leadership-search" },
+      { label: "All Practices", href: "/#services" },
     ],
   },
   {
     heading: "Who We Serve",
     links: [
-      { label: "Epic / EHR", href: "#practice-epic" },
-      { label: "Enterprise Apps", href: "#practice-enterprise-apps" },
-      { label: "AI & Data", href: "#practice-ai-data" },
-      { label: "Infrastructure", href: "#practice-infrastructure" },
-      { label: "PMO", href: "#practice-pmo" },
+      { label: "Epic / EHR", href: "/epic" },
+      { label: "Enterprise Apps", href: "/enterprise-apps" },
+      { label: "AI & Data", href: "/ai-data" },
+      { label: "Infrastructure", href: "/infrastructure" },
+      { label: "PMO", href: "/pmo" },
     ],
   },
   {
-    heading: "For Talent",
+    heading: "Get Hired",
     links: [
-      { label: "Join the Network", href: "#for-talent" },
-      { label: "Open Roles", href: "#for-talent-jobs" },
-      { label: "Salary Data", href: "#insights" },
+      { label: "Join the Network", href: "/get-hired" },
+      { label: "Open Roles", href: "/get-hired" },
+      { label: "Salary Data", href: "/#report" },
     ],
   },
   {
     heading: "Insights",
     links: [
-      { label: "2026 Workforce Report", href: "#insights" },
-      { label: "The Survey", href: "#survey" },
-      { label: "Field Notes", href: "#blog" },
-      { label: "Case Studies", href: "#case-studies" },
+      { label: "2026 Workforce Report", href: "/#report" },
+      { label: "The Survey", href: "/survey" },
+      { label: "Field Notes", href: "/blog" },
+      { label: "Case Studies", href: "/#case-studies" },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "About", href: "#about" },
-      { label: "Contact", href: "#contact" },
-      { label: "Privacy", href: "#privacy" },
+      { label: "About", href: "/about" },
+      { label: "Book a Call", href: "/#book-a-call" },
+      { label: "Privacy", href: "/privacy" },
     ],
   },
 ];
 
 export function SiteFooter() {
-  const { ref, isVisible } = useScrollReveal();
-
   return (
     <>
-      {/* Final CTA */}
-      <section id="contact" ref={ref} className="bg-cream py-24 md:py-36">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <h2 className="mx-auto max-w-3xl font-display text-4xl leading-tight text-ink md:text-6xl">
-              Ready to fill the role —
-              <br />
-              <em className="text-teal">or run the search?</em>
-            </h2>
-            <p className="mx-auto mt-6 max-w-lg text-ink/60">
-              Book a 30-minute discovery call. No pitch deck. No commitment.
-              Just a conversation about what you need and whether we're the right shop to help.
-            </p>
-            <a
-              href="#"
-              className="mt-10 inline-flex items-center justify-center rounded-full bg-teal px-10 py-4 text-sm font-semibold text-white transition-all hover:brightness-110"
-            >
-              Schedule a Discovery Call
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Newsletter */}
       <div className="border-t border-ink/10 bg-stone py-16">
         <div className="mx-auto max-w-7xl px-6">
@@ -148,7 +122,7 @@ export function SiteFooter() {
 
           <div className="mt-12 border-t border-white/5 pt-6">
             <p className="text-center text-xs text-muted-foreground/60">
-              © 2026 Bloomforce. All rights reserved. Healthcare IT talent — it's all we do.
+              © 2026 Bloomforce. All rights reserved. Healthcare IT talent. It's all we do.
             </p>
           </div>
         </div>

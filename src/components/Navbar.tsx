@@ -10,40 +10,40 @@ const practices = [
     icon: Briefcase,
     title: "Staffing",
     subtitle: "CONTRACT & CONTRACT-TO-HIRE",
-    description: "Specialist consultants for the projects that can't slow down — go-lives, migrations, stabilizations, and backfill. Deployed in days, not months.",
+    description: "Specialist consultants for projects that can't slow down. Go-lives, migrations, stabilizations, backfill. On-site in days, not months.",
     features: [
       { label: "Go-Live & Project Surge", desc: "Teams ready in under two weeks" },
       { label: "Contract-to-Hire", desc: "Try the fit before you commit" },
       { label: "Interim Coverage", desc: "Hold the line while you search" },
     ],
     cta: "Need help on a live project?",
-    href: "#staffing",
+    href: "/staffing",
   },
   {
     icon: UserCheck,
     title: "Direct Placement",
     subtitle: "PERMANENT HIRES",
-    description: "Full-time hires for mission-critical IT roles — analysts, engineers, architects, and managers. We find the person you'll still be thanking us for two years from now.",
+    description: "Full-time hires for mission-critical IT roles. Analysts, engineers, architects, managers. Vetted for the seat and the culture, not just the résumé.",
     features: [
       { label: "Individual Contributors", desc: "Analysts, engineers, architects" },
       { label: "People Managers", desc: "Team leads and managers" },
       { label: "Retention-First", desc: "Vetted for fit, not just skills" },
     ],
     cta: "Filling a full-time seat?",
-    href: "#direct-placement",
+    href: "/direct-placement",
   },
   {
     icon: Crown,
     title: "Leadership Search",
     subtitle: "DIRECTOR THROUGH CIO",
-    description: "Retained search for the tier that actually runs healthcare IT — Director, Sr. Director, Executive Director, VP, AVP, and CIO. Quiet, rigorous, and built around fit.",
+    description: "Retained search for the people who actually run healthcare IT. Quiet, rigorous, and built around fit.",
     features: [
       { label: "Director \u2192 VP", desc: "The operators who run the org" },
       { label: "AVP & Executive Director", desc: "The hardest-to-fill middle" },
       { label: "CIO Search", desc: "For the top of the org chart" },
     ],
     cta: "Hiring your next IT leader?",
-    href: "#leadership-search",
+    href: "/leadership-search",
   },
 ];
 
@@ -60,7 +60,7 @@ const practiceAreas = [
       { label: "Training & Adoption", desc: "End-user training programs" },
     ],
     cta: "Need Epic talent?",
-    href: "#practice-epic",
+    href: "/epic",
   },
   {
     icon: Server,
@@ -73,7 +73,7 @@ const practiceAreas = [
       { label: "Workday & Oracle", desc: "HCM and ERP specialists" },
     ],
     cta: "Need enterprise app talent?",
-    href: "#practice-enterprise-apps",
+    href: "/enterprise-apps",
   },
   {
     icon: Brain,
@@ -86,7 +86,7 @@ const practiceAreas = [
       { label: "BI & Reporting", desc: "Dashboards and executive analytics" },
     ],
     cta: "Need data & AI talent?",
-    href: "#practice-ai-data",
+    href: "/ai-data",
   },
   {
     icon: Cloud,
@@ -99,7 +99,7 @@ const practiceAreas = [
       { label: "Security", desc: "Engineers, analysts, and architects" },
     ],
     cta: "Need infrastructure talent?",
-    href: "#practice-infrastructure",
+    href: "/infrastructure",
   },
   {
     icon: ClipboardList,
@@ -112,7 +112,7 @@ const practiceAreas = [
       { label: "Change Management", desc: "Adoption and training leads" },
     ],
     cta: "Need PMO talent?",
-    href: "#practice-pmo",
+    href: "/pmo",
   },
 ];
 
@@ -125,7 +125,9 @@ const insights = [
     description: "The definitive compensation benchmark for healthcare IT professionals. Covers Epic, cloud, security, data, and leadership roles across 200+ health systems.",
     image: salaryReportCover,
     ctaLabel: "Download Free",
+    ctaHref: "/survey",
     ctaSecondary: "View Summary",
+    ctaSecondaryHref: "/#report",
   },
   {
     icon: Newspaper,
@@ -134,7 +136,9 @@ const insights = [
     description: "Insights on healthcare IT hiring trends, talent strategy, and digital transformation from our team of industry specialists.",
     image: blogCover,
     ctaLabel: "Read Latest",
+    ctaHref: "/blog",
     ctaSecondary: "Browse All Posts",
+    ctaSecondaryHref: "/blog",
   },
   {
     icon: BookOpen,
@@ -143,7 +147,9 @@ const insights = [
     description: "Real results from real health systems. See how Bloomforce has helped organizations fill critical IT gaps and accelerate transformation.",
     image: null,
     ctaLabel: "View Studies",
+    ctaHref: "/#case-studies",
     ctaSecondary: null,
+    ctaSecondaryHref: null,
   },
 ];
 
@@ -226,7 +232,7 @@ function SolutionsMegaMenu({ onClose }: { onClose: () => void }) {
 
           <div className="mx-6 mt-4">
             <a
-              href="#services"
+              href="/#services"
               onClick={onClose}
               className="flex items-center justify-center gap-2 rounded-lg border border-ink/15 py-3 text-sm font-medium text-ink/70 transition-all hover:border-teal hover:text-teal"
             >
@@ -258,7 +264,7 @@ function SolutionsMegaMenu({ onClose }: { onClose: () => void }) {
           <div className="mt-8 flex items-center justify-between rounded-lg bg-stone/60 px-6 py-4">
             <span className="text-sm text-ink/70">{active.cta}</span>
             <a
-              href={active.href || "#contact"}
+              href={active.href || "/#book-a-call"}
               onClick={onClose}
               className="flex items-center gap-2 font-semibold text-teal transition-colors hover:text-teal-light"
             >
@@ -308,7 +314,7 @@ function InsightsMegaMenu({ onClose }: { onClose: () => void }) {
           ))}
           <div className="mx-6 mt-4">
             <a
-              href="#insights"
+              href="/blog"
               onClick={onClose}
               className="flex items-center justify-center gap-2 rounded-lg border border-ink/15 py-3 text-sm font-medium text-ink/70 transition-all hover:border-teal hover:text-teal"
             >
@@ -344,7 +350,7 @@ function InsightsMegaMenu({ onClose }: { onClose: () => void }) {
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="#"
+                href={active.ctaHref || "#"}
                 onClick={onClose}
                 className="inline-flex items-center gap-2 rounded-lg bg-teal px-5 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110"
               >
@@ -352,7 +358,7 @@ function InsightsMegaMenu({ onClose }: { onClose: () => void }) {
               </a>
               {active.ctaSecondary && (
                 <a
-                  href="#"
+                  href={active.ctaSecondaryHref || "#"}
                   onClick={onClose}
                   className="inline-flex items-center gap-2 rounded-lg border border-ink/15 px-5 py-2.5 text-sm font-medium text-ink/70 transition-all hover:border-teal hover:text-teal"
                 >
@@ -400,9 +406,9 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  const simpleLinks = [
-    { label: "How it Works", href: "#why" },
-    { label: "About", href: "#results" },
+  const trailingLinks = [
+    { label: "About", href: "/about" },
+    { label: "Get Hired", href: "/get-hired" },
   ];
 
   return (
@@ -413,17 +419,6 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden items-center gap-8 md:flex">
-            {simpleLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-[15px] font-medium text-ink/80 transition-colors hover:text-teal"
-                onMouseEnter={() => { clearTimeout(closeTimer.current); setActiveMenu(null); }}
-              >
-                {link.label}
-              </a>
-            ))}
-
             {/* What We Do trigger */}
             <button
               onMouseEnter={() => openMenu("solutions")}
@@ -453,13 +448,24 @@ export function Navbar() {
                 className={`transition-transform duration-200 ${activeMenu === "insights" ? "rotate-180" : ""}`}
               />
             </button>
+
+            {trailingLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-[15px] font-medium text-ink/80 transition-colors hover:text-teal"
+                onMouseEnter={() => { clearTimeout(closeTimer.current); setActiveMenu(null); }}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           <a
-            href="#contact"
+            href="/#book-a-call"
             className="hidden rounded-full bg-teal px-6 py-2.5 text-[15px] font-semibold text-white transition-all hover:brightness-110 md:inline-block"
           >
-            Get Started
+            Book a Call
           </a>
 
           <button className="text-ink md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -484,17 +490,6 @@ export function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 top-[65px] z-40 overflow-y-auto bg-cream md:hidden">
           <div className="px-6 py-6">
-            {simpleLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block py-3 text-[15px] font-medium text-ink/80"
-              >
-                {link.label}
-              </a>
-            ))}
-
             <MobileAccordion
               title="What We Do"
               items={[
@@ -505,12 +500,23 @@ export function Navbar() {
             />
             <MobileAccordion title="Insights" items={insights.map(s => ({ label: s.title, href: "#" }))} onClose={() => setMobileOpen(false)} />
 
+            {trailingLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block border-t border-ink/8 py-3 text-[15px] font-medium text-ink/80"
+              >
+                {link.label}
+              </a>
+            ))}
+
             <a
-              href="#contact"
+              href="/#book-a-call"
               onClick={() => setMobileOpen(false)}
               className="mt-6 block rounded-full bg-teal px-6 py-3 text-center text-[15px] font-semibold text-white"
             >
-              Get Started
+              Book a Call
             </a>
           </div>
         </div>

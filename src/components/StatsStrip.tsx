@@ -1,48 +1,44 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 /*
- * Technology logo strip.
- * Swap these text nodes for real SVG/image logos as they become available.
- * Keeping text-only keeps us vendor-license-safe until assets are procured.
+ * Client logo strip.
+ * Text-only until we get permission-cleared logo files for each brand.
+ * Names map 1:1 to the case studies below — OHSU, Piedmont, COPC.
  */
-const platforms = [
-  "Epic",
-  "Workday",
-  "Oracle / Cerner",
-  "ServiceNow",
-  "MEDITECH",
-  "Infor",
-  "AWS",
-  "Azure",
-  "Salesforce",
-  "Google Cloud",
+const clients = [
+  { name: "OHSU", context: "Academic Medical Center" },
+  { name: "Piedmont", context: "Health System" },
+  { name: "COPC", context: "Primary Care Platform" },
 ];
 
 export function StatsStrip() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="border-y border-ink/10 bg-cream-dark py-16">
-      <div className="mx-auto max-w-7xl px-6">
+    <section ref={ref} className="border-y border-ink/10 bg-cream-dark py-20">
+      <div className="mx-auto max-w-6xl px-6">
         <p
-          className={`mb-10 text-center font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 transition-all duration-700 ${
+          className={`mb-12 text-center font-mono text-sm uppercase tracking-[0.25em] text-teal transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          We specialize in the technology you already use
+          Trusted By
         </p>
 
-        <div className="grid grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-3 md:grid-cols-5">
-          {platforms.map((name, i) => (
+        <div className="grid items-center gap-10 sm:grid-cols-3">
+          {clients.map((c, i) => (
             <div
-              key={name}
-              className={`flex items-center justify-center transition-all duration-700 ${
+              key={c.name}
+              className={`flex flex-col items-center text-center transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
-              style={{ transitionDelay: `${i * 60}ms` }}
+              style={{ transitionDelay: `${i * 120}ms` }}
             >
-              <span className="font-display text-lg tracking-tight text-ink/60 md:text-xl">
-                {name}
+              <span className="font-display text-3xl tracking-tight text-ink md:text-4xl">
+                {c.name}
+              </span>
+              <span className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/40">
+                {c.context}
               </span>
             </div>
           ))}

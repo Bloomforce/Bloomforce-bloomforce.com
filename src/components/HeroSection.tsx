@@ -89,7 +89,7 @@ export function HeroSection() {
         <div className="mx-auto w-full max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="max-w-xl">
-              <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
+              <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
                 Healthcare IT Staffing & Search
               </p>
               <h1 className="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl">
@@ -98,21 +98,20 @@ export function HeroSection() {
                 <em className="text-teal">It's all we do.</em>
               </h1>
               <p className="mt-8 max-w-lg text-lg leading-relaxed text-ink-muted md:text-xl">
-                We staff the projects that can't slow down, and run the searches that can't
-                afford to get wrong. That's it. That's all we do.
+                Boutique by design. Built for health systems that take IT hiring seriously.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="#contact"
+                  href="#book-a-call"
                   className="inline-flex items-center justify-center rounded-full bg-teal px-8 py-4 text-sm font-semibold text-white transition-all hover:brightness-110"
                 >
-                  Talk to Us
+                  Book a 20-Minute Call
                 </a>
                 <a
-                  href="#insights"
+                  href="#report"
                   className="inline-flex items-center justify-center rounded-full border border-ink/20 px-8 py-4 text-sm font-semibold text-ink transition-colors hover:bg-cream-dark"
                 >
-                  Read the 2026 Workforce Report →
+                  Read the 2026 Workforce Report
                 </a>
               </div>
             </div>

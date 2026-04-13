@@ -2,20 +2,20 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const principles = [
   {
-    title: "No bench.",
-    body: "We don't carry a bench of underutilized consultants looking for a home. Every placement is sourced for the role — not the other way around. If we don't have the right person, we say so.",
+    no: "No bench.",
+    yes: "Every placement is sourced for the role. If we don't have the right person, we tell you.",
   },
   {
-    title: "No bait-and-switch.",
-    body: "The consultant you meet is the consultant you get. No swapping in a junior at week three. No handing your project to a delivery manager you've never spoken to.",
+    no: "No bait-and-switch.",
+    yes: "The consultant you meet is the consultant you get. Period.",
   },
   {
-    title: "No résumé dumps.",
-    body: "We send you a shortlist, not an inbox. Three to five candidates you'd actually hire — not twenty you have to sort through on a Friday afternoon.",
+    no: "No resume dumps.",
+    yes: "Three to five candidates you'd actually hire. Not twenty to sort through on a Friday.",
   },
   {
-    title: "No generalists.",
-    body: "We don't staff finance, marketing, or sales. We don't recruit nurses. We don't fill warehouse shifts. Healthcare IT is the whole shop. That's why we're good at it.",
+    no: "No generalists.",
+    yes: "Healthcare IT is the entire practice. That's why we're good at it.",
   },
 ];
 
@@ -23,46 +23,41 @@ export function Manifesto() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="bg-navy-dark py-24 md:py-36">
-      <div className="mx-auto max-w-5xl px-6">
+    <section ref={ref} className="bg-stone py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6">
         <div
-          ref={ref}
-          className={`mb-16 max-w-3xl transition-all duration-1000 ${
+          className={`mb-12 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
-            What We Won't Do
+          <p className="mb-4 font-mono text-sm uppercase tracking-[0.25em] text-teal">
+            How We Work
           </p>
-          <h2 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
-            No bench. No bait-and-switch.
-            <br />
-            <em className="text-teal">No résumé dumps.</em>
+          <h2 className="font-display text-3xl leading-tight text-ink md:text-5xl">
+            Four rules we don't break.
           </h2>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-2 md:gap-x-16 md:gap-y-14">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {principles.map((p, i) => (
             <div
-              key={p.title}
-              className={`transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              key={p.no}
+              className={`group rounded-2xl border border-ink/8 bg-white px-6 py-7 transition-all duration-700 hover:border-teal/30 hover:shadow-md ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
               }`}
-              style={{ transitionDelay: `${(i + 1) * 150}ms` }}
+              style={{ transitionDelay: `${(i + 1) * 100}ms` }}
             >
-              <h3 className="font-display text-2xl text-teal md:text-3xl">{p.title}</h3>
-              <p className="mt-3 text-base leading-relaxed text-warm-gray">{p.body}</p>
+              <h3 className="font-display text-xl text-ink md:text-2xl">
+                {p.no}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                {p.yes}
+              </p>
             </div>
           ))}
         </div>
-
-        <p
-          className={`mt-16 text-center font-display text-2xl italic text-foreground md:text-3xl transition-all duration-1000 delay-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          That's the shop. <span className="text-teal">That's the promise.</span>
-        </p>
       </div>
     </section>
   );
