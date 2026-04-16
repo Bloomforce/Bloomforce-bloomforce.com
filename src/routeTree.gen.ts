@@ -9,8 +9,86 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SurveyRouteImport } from './routes/survey'
+import { Route as StaffingRouteImport } from './routes/staffing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PmoRouteImport } from './routes/pmo'
+import { Route as LeadershipSearchRouteImport } from './routes/leadership-search'
+import { Route as InfrastructureRouteImport } from './routes/infrastructure'
+import { Route as GetHiredRouteImport } from './routes/get-hired'
+import { Route as EpicRouteImport } from './routes/epic'
+import { Route as EnterpriseAppsRouteImport } from './routes/enterprise-apps'
+import { Route as DirectPlacementRouteImport } from './routes/direct-placement'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AiDataRouteImport } from './routes/ai-data'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SurveyRoute = SurveyRouteImport.update({
+  id: '/survey',
+  path: '/survey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StaffingRoute = StaffingRouteImport.update({
+  id: '/staffing',
+  path: '/staffing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PmoRoute = PmoRouteImport.update({
+  id: '/pmo',
+  path: '/pmo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipSearchRoute = LeadershipSearchRouteImport.update({
+  id: '/leadership-search',
+  path: '/leadership-search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfrastructureRoute = InfrastructureRouteImport.update({
+  id: '/infrastructure',
+  path: '/infrastructure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetHiredRoute = GetHiredRouteImport.update({
+  id: '/get-hired',
+  path: '/get-hired',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EpicRoute = EpicRouteImport.update({
+  id: '/epic',
+  path: '/epic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnterpriseAppsRoute = EnterpriseAppsRouteImport.update({
+  id: '/enterprise-apps',
+  path: '/enterprise-apps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectPlacementRoute = DirectPlacementRouteImport.update({
+  id: '/direct-placement',
+  path: '/direct-placement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiDataRoute = AiDataRouteImport.update({
+  id: '/ai-data',
+  path: '/ai-data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +97,214 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-data': typeof AiDataRoute
+  '/blog': typeof BlogRoute
+  '/direct-placement': typeof DirectPlacementRoute
+  '/enterprise-apps': typeof EnterpriseAppsRoute
+  '/epic': typeof EpicRoute
+  '/get-hired': typeof GetHiredRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/leadership-search': typeof LeadershipSearchRoute
+  '/pmo': typeof PmoRoute
+  '/privacy': typeof PrivacyRoute
+  '/staffing': typeof StaffingRoute
+  '/survey': typeof SurveyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-data': typeof AiDataRoute
+  '/blog': typeof BlogRoute
+  '/direct-placement': typeof DirectPlacementRoute
+  '/enterprise-apps': typeof EnterpriseAppsRoute
+  '/epic': typeof EpicRoute
+  '/get-hired': typeof GetHiredRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/leadership-search': typeof LeadershipSearchRoute
+  '/pmo': typeof PmoRoute
+  '/privacy': typeof PrivacyRoute
+  '/staffing': typeof StaffingRoute
+  '/survey': typeof SurveyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-data': typeof AiDataRoute
+  '/blog': typeof BlogRoute
+  '/direct-placement': typeof DirectPlacementRoute
+  '/enterprise-apps': typeof EnterpriseAppsRoute
+  '/epic': typeof EpicRoute
+  '/get-hired': typeof GetHiredRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/leadership-search': typeof LeadershipSearchRoute
+  '/pmo': typeof PmoRoute
+  '/privacy': typeof PrivacyRoute
+  '/staffing': typeof StaffingRoute
+  '/survey': typeof SurveyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/ai-data'
+    | '/blog'
+    | '/direct-placement'
+    | '/enterprise-apps'
+    | '/epic'
+    | '/get-hired'
+    | '/infrastructure'
+    | '/leadership-search'
+    | '/pmo'
+    | '/privacy'
+    | '/staffing'
+    | '/survey'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/ai-data'
+    | '/blog'
+    | '/direct-placement'
+    | '/enterprise-apps'
+    | '/epic'
+    | '/get-hired'
+    | '/infrastructure'
+    | '/leadership-search'
+    | '/pmo'
+    | '/privacy'
+    | '/staffing'
+    | '/survey'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ai-data'
+    | '/blog'
+    | '/direct-placement'
+    | '/enterprise-apps'
+    | '/epic'
+    | '/get-hired'
+    | '/infrastructure'
+    | '/leadership-search'
+    | '/pmo'
+    | '/privacy'
+    | '/staffing'
+    | '/survey'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AiDataRoute: typeof AiDataRoute
+  BlogRoute: typeof BlogRoute
+  DirectPlacementRoute: typeof DirectPlacementRoute
+  EnterpriseAppsRoute: typeof EnterpriseAppsRoute
+  EpicRoute: typeof EpicRoute
+  GetHiredRoute: typeof GetHiredRoute
+  InfrastructureRoute: typeof InfrastructureRoute
+  LeadershipSearchRoute: typeof LeadershipSearchRoute
+  PmoRoute: typeof PmoRoute
+  PrivacyRoute: typeof PrivacyRoute
+  StaffingRoute: typeof StaffingRoute
+  SurveyRoute: typeof SurveyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/survey': {
+      id: '/survey'
+      path: '/survey'
+      fullPath: '/survey'
+      preLoaderRoute: typeof SurveyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/staffing': {
+      id: '/staffing'
+      path: '/staffing'
+      fullPath: '/staffing'
+      preLoaderRoute: typeof StaffingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pmo': {
+      id: '/pmo'
+      path: '/pmo'
+      fullPath: '/pmo'
+      preLoaderRoute: typeof PmoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership-search': {
+      id: '/leadership-search'
+      path: '/leadership-search'
+      fullPath: '/leadership-search'
+      preLoaderRoute: typeof LeadershipSearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infrastructure': {
+      id: '/infrastructure'
+      path: '/infrastructure'
+      fullPath: '/infrastructure'
+      preLoaderRoute: typeof InfrastructureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-hired': {
+      id: '/get-hired'
+      path: '/get-hired'
+      fullPath: '/get-hired'
+      preLoaderRoute: typeof GetHiredRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/epic': {
+      id: '/epic'
+      path: '/epic'
+      fullPath: '/epic'
+      preLoaderRoute: typeof EpicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enterprise-apps': {
+      id: '/enterprise-apps'
+      path: '/enterprise-apps'
+      fullPath: '/enterprise-apps'
+      preLoaderRoute: typeof EnterpriseAppsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/direct-placement': {
+      id: '/direct-placement'
+      path: '/direct-placement'
+      fullPath: '/direct-placement'
+      preLoaderRoute: typeof DirectPlacementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-data': {
+      id: '/ai-data'
+      path: '/ai-data'
+      fullPath: '/ai-data'
+      preLoaderRoute: typeof AiDataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +317,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AiDataRoute: AiDataRoute,
+  BlogRoute: BlogRoute,
+  DirectPlacementRoute: DirectPlacementRoute,
+  EnterpriseAppsRoute: EnterpriseAppsRoute,
+  EpicRoute: EpicRoute,
+  GetHiredRoute: GetHiredRoute,
+  InfrastructureRoute: InfrastructureRoute,
+  LeadershipSearchRoute: LeadershipSearchRoute,
+  PmoRoute: PmoRoute,
+  PrivacyRoute: PrivacyRoute,
+  StaffingRoute: StaffingRoute,
+  SurveyRoute: SurveyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

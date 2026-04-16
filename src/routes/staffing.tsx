@@ -15,17 +15,18 @@ import {
 } from "lucide-react";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Navbar } from "@/components/Navbar";
+import { BookCallCTA } from "@/components/BookCallCTA";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/staffing")({
   component: StaffingPage,
   head: () => ({
     meta: [
-      { title: "Staffing — Bloomforce" },
+      { title: "Staffing. Bloomforce." },
       {
         name: "description",
         content:
-          "Healthcare IT staffing built for the projects that can't slow down. Specialist consultants on the ground in days — go-lives, migrations, backfill, and contract-to-hire.",
+          "Healthcare IT staffing built for the projects that can't slow down. Specialist consultants on the ground in days. Go-lives, migrations, backfill, and contract-to-hire.",
       },
     ],
   }),
@@ -39,8 +40,8 @@ function StaffingHero() {
     <section className="bg-cream pt-20 pb-24 md:pt-28 md:pb-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-3xl">
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
-            Practice 01 — Staffing
+          <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
+            Practice 01 · Staffing
           </p>
           <h1 className="font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
             Specialist consultants for
@@ -50,11 +51,11 @@ function StaffingHero() {
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
             Go-lives, migrations, stabilizations, and backfill. When the timeline won't
             move and the work has to get done, we put vetted healthcare IT specialists on
-            the ground — usually in days, always by people who've done this work before.
+            the ground. Usually in days, always by people who've done this work before.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#contact"
+              href="/#book-a-call"
               className="inline-flex items-center justify-center rounded-full bg-teal px-8 py-4 text-sm font-semibold text-white transition-all hover:brightness-110"
             >
               Talk to a Staffing Lead
@@ -80,14 +81,14 @@ const useCases = [
     icon: Zap,
     title: "Project Surge",
     body:
-      "You have a go-live in six weeks and three critical seats open. You need builders, analysts, or trainers who can ramp in days — not people who need a month of context before they're useful.",
+      "You have a go-live in six weeks and three critical seats open. You need builders, analysts, or trainers who can ramp in days, not people who need a month of context before they're useful.",
     examples: "Epic go-lives · ERP cutovers · ServiceNow rollouts",
   },
   {
     icon: Users,
     title: "Backfill & Coverage",
     body:
-      "A key person is out on leave, resigned unexpectedly, or got pulled onto another initiative. You need to hold the line until you can run a real hire — without dropping the ball in the meantime.",
+      "A key person is out on leave, resigned unexpectedly, or got pulled onto another initiative. You need to hold the line until you can run a real hire without dropping the ball in the meantime.",
     examples: "Parental leave · Unexpected resignation · Interim coverage",
   },
   {
@@ -113,7 +114,7 @@ function UseCases() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
+          <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
             Who It's For
           </p>
           <h2 className="font-display text-4xl leading-tight text-ink md:text-5xl">
@@ -158,7 +159,7 @@ const comparisonRows = [
   {
     dimension: "The Bench",
     bigFirm:
-      "They need to keep a bench utilized, so they pitch you the people they have — not the people you need. Your role gets shaped to fit their roster.",
+      "They need to keep a bench utilized, so they pitch you the people they have, not the people you need. Your role gets shaped to fit their roster.",
     bloomforce:
       "We don't carry a bench. Every placement is sourced for the role. If we don't have the right person, we say so out loud.",
   },
@@ -172,7 +173,7 @@ const comparisonRows = [
   {
     dimension: "Industry Focus",
     bigFirm:
-      "Healthcare IT is one practice area among dozens — finance, manufacturing, retail, logistics. Your recruiter was working a SAP role last week.",
+      "Healthcare IT is one practice area among dozens: finance, manufacturing, retail, logistics. Your recruiter was working a SAP role last week.",
     bloomforce:
       "Healthcare IT is the whole shop. Every recruiter, every candidate, every process. We don't staff anything else, so we're actually good at this.",
   },
@@ -188,7 +189,7 @@ const comparisonRows = [
     bigFirm:
       "You hear from them when it's time to renew. Problems surface during the next contract negotiation, not when they could still be fixed.",
     bloomforce:
-      "We check in with you and the consultant through the whole engagement. If something's off, we want to know week one — not month three.",
+      "We check in with you and the consultant through the whole engagement. If something's off, we want to know week one, not month three.",
   },
 ];
 
@@ -203,7 +204,7 @@ function ComparisonTable() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
+          <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
             Why Not Just Call Your MSA Vendor?
           </p>
           <h2 className="font-display text-4xl leading-tight text-ink md:text-6xl">
@@ -211,7 +212,7 @@ function ComparisonTable() {
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted">
             The honest version. Here's where a boutique specialist actually changes the
-            outcome — and where a big staffing firm usually gets in its own way.
+            outcome, and where a big staffing firm usually gets in its own way.
           </p>
         </div>
 
@@ -222,24 +223,24 @@ function ComparisonTable() {
           }`}
         >
           {/* Table header */}
-          <div className="grid grid-cols-[1.2fr_2fr_2fr] border-b border-ink/10 bg-stone/60">
+          <div className="grid grid-cols-[1.2fr_2fr_2fr] border-b-2 border-ink/15 bg-stone/80">
             <div className="px-6 py-5">
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">
+              <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">
                 Dimension
               </span>
             </div>
             <div className="border-l border-ink/10 px-6 py-5">
-              <div className="flex items-center gap-2">
-                <X className="h-4 w-4 text-ink/40" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">
+              <div className="flex items-center gap-2.5">
+                <X className="h-5 w-5 text-red-400/70" />
+                <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">
                   Big Staffing Firm
                 </span>
               </div>
             </div>
-            <div className="border-l border-ink/10 bg-teal/8 px-6 py-5">
-              <div className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-teal" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-teal">
+            <div className="border-l border-ink/10 bg-teal/10 px-6 py-5">
+              <div className="flex items-center gap-2.5">
+                <Check className="h-5 w-5 text-teal" />
+                <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-teal">
                   Bloomforce
                 </span>
               </div>
@@ -255,7 +256,7 @@ function ComparisonTable() {
               }`}
             >
               <div className="px-6 py-6">
-                <h3 className="font-display text-base text-ink md:text-lg">
+                <h3 className="text-base font-semibold text-ink md:text-lg">
                   {row.dimension}
                 </h3>
               </div>
@@ -267,6 +268,14 @@ function ComparisonTable() {
               </div>
             </div>
           ))}
+
+          {/* Closing statement — full-width banner */}
+          <div className="border-t-2 border-teal/20 bg-teal/[0.06] px-8 py-6">
+            <p className="text-center text-lg font-semibold leading-snug text-ink md:text-xl">
+              None of this is a trade secret. It's just what happens when a shop actually
+              specializes, and what stops happening when it doesn't.
+            </p>
+          </div>
         </div>
 
         {/* Mobile: stacked cards */}
@@ -276,11 +285,11 @@ function ComparisonTable() {
               key={row.dimension}
               className="rounded-xl border border-ink/10 bg-white p-6"
             >
-              <h3 className="font-display text-lg text-ink">{row.dimension}</h3>
+              <h3 className="text-lg font-semibold text-ink">{row.dimension}</h3>
               <div className="mt-4">
                 <div className="mb-1 flex items-center gap-2">
-                  <X className="h-3.5 w-3.5 text-ink/40" />
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-ink/50">
+                  <X className="h-4 w-4 text-red-400/70" />
+                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-ink/70">
                     Big Firm
                   </span>
                 </div>
@@ -288,8 +297,8 @@ function ComparisonTable() {
               </div>
               <div className="mt-4 rounded-lg bg-teal/5 p-4">
                 <div className="mb-1 flex items-center gap-2">
-                  <Check className="h-3.5 w-3.5 text-teal" />
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-teal">
+                  <Check className="h-4 w-4 text-teal" />
+                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-teal">
                     Bloomforce
                   </span>
                 </div>
@@ -297,16 +306,15 @@ function ComparisonTable() {
               </div>
             </div>
           ))}
-        </div>
 
-        <p
-          className={`mt-12 max-w-3xl text-xl italic font-medium text-ink transition-all duration-1000 delay-500 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          None of this is a trade secret. It's just what happens when a shop actually
-          specializes — and what stops happening when it doesn't.
-        </p>
+          {/* Mobile closing statement */}
+          <div className="rounded-xl bg-teal/[0.06] px-6 py-5">
+            <p className="text-center text-base font-semibold leading-snug text-ink">
+              None of this is a trade secret. It's just what happens when a shop actually
+              specializes, and what stops happening when it doesn't.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -328,19 +336,19 @@ const phases = [
     title: "Shortlist",
     completion: "You have three to five candidates you'd actually hire",
     body:
-      "We tap a specialist network built over years of healthcare IT recruiting. We screen for skills, credentials, and fit — then send you a curated shortlist, not a résumé dump.",
+      "We tap a specialist network built over years of healthcare IT recruiting. We screen for skills, credentials, and fit, then send you a curated shortlist, not a résumé dump.",
   },
   {
     num: "03",
     title: "Place",
     completion: "Your consultant is on the ground and productive",
     body:
-      "We coordinate interviews, handle negotiations, and run onboarding. You meet the person who's actually doing the work — no bait-and-switch, no delivery manager layer in between.",
+      "We coordinate interviews, handle negotiations, and run onboarding. You meet the person who's actually doing the work. No bait-and-switch, no delivery manager layer in between.",
   },
   {
     num: "04",
     title: "Support",
-    completion: "You know what's working and what isn't — in real time",
+    completion: "You know what's working and what isn't, in real time",
     body:
       "Weekly check-ins with you and the consultant throughout the engagement. If something's off, we want to know week one. Renewals are a conversation, not a surprise.",
   },
@@ -357,7 +365,7 @@ function HowItWorks() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
+          <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
             How It Works
           </p>
           <h2 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
@@ -365,7 +373,7 @@ function HowItWorks() {
           </h2>
           <p className="mt-6 text-base leading-relaxed text-warm-gray">
             We measure each phase by completion, not calendar. Most engagements move from
-            intake to on-the-ground in under two weeks — some faster, some slower, all
+            intake to on-the-ground in under two weeks. Some faster, some slower, all
             scoped to the urgency of the work.
           </p>
         </div>
@@ -408,11 +416,11 @@ function HowItWorks() {
    Practice Areas (where we staff)
    ───────────────────────────────────────────── */
 const areas = [
-  { icon: Monitor, title: "Epic / EHR", href: "#practice-epic" },
-  { icon: Server, title: "Enterprise Apps", href: "#practice-enterprise-apps" },
-  { icon: Brain, title: "AI & Data", href: "#practice-ai-data" },
-  { icon: Cloud, title: "Infrastructure", href: "#practice-infrastructure" },
-  { icon: ClipboardList, title: "PMO", href: "#practice-pmo" },
+  { icon: Monitor, title: "Epic / EHR", href: "/epic" },
+  { icon: Server, title: "Enterprise Apps", href: "/enterprise-apps" },
+  { icon: Brain, title: "AI & Data", href: "/ai-data" },
+  { icon: Cloud, title: "Infrastructure", href: "/infrastructure" },
+  { icon: ClipboardList, title: "PMO", href: "/pmo" },
 ];
 
 function PracticeAreas() {
@@ -426,7 +434,7 @@ function PracticeAreas() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-teal">
+          <p className="mb-4 font-mono text-sm uppercase tracking-[0.25em] text-teal">
             Where We Staff
           </p>
           <h2 className="font-display text-3xl leading-tight text-ink md:text-4xl">
@@ -467,6 +475,7 @@ function StaffingPage() {
       <ComparisonTable />
       <HowItWorks />
       <PracticeAreas />
+      <BookCallCTA />
       <SiteFooter />
     </div>
   );

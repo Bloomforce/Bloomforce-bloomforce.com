@@ -2,21 +2,24 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import { StatsStrip } from "@/components/StatsStrip";
-import { ProblemSection } from "@/components/ProblemSection";
 import { ServicesSection } from "@/components/ServicesSection";
-import { Manifesto } from "@/components/Manifesto";
+import { LogoScroll } from "@/components/LogoScroll";
+import { TalentMarketSection } from "@/components/TalentMarketSection";
 import { TestimonialSection } from "@/components/TestimonialSection";
-import { WhyBloomforce } from "@/components/WhyBloomforce";
-import { TalentCTA } from "@/components/TalentCTA";
+import { ReportBlock } from "@/components/ReportBlock";
+import { BookCallCTA } from "@/components/BookCallCTA";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Bloomforce — Healthcare IT Talent. It's All We Do." },
-      { name: "description", content: "Bloomforce is a boutique healthcare IT staffing and search firm. We place specialist consultants and run retained searches for the tier that actually runs healthcare IT — Director through CIO." },
+      { title: "Bloomforce. Healthcare IT Talent. It's All We Do." },
+      {
+        name: "description",
+        content:
+          "Bloomforce is a boutique healthcare IT staffing and search firm. Specialist consultants for the projects that can't slow down. Retained search for the leaders you can't afford to miss.",
+      },
     ],
   }),
 });
@@ -27,13 +30,12 @@ function Index() {
       <AnnouncementBanner />
       <Navbar />
       <HeroSection />
-      <StatsStrip />
-      <ProblemSection />
+      <LogoScroll />
+      <TalentMarketSection />
       <ServicesSection />
-      <Manifesto />
       <TestimonialSection />
-      <WhyBloomforce />
-      <TalentCTA />
+      <ReportBlock />
+      <BookCallCTA />
       <SiteFooter />
     </div>
   );

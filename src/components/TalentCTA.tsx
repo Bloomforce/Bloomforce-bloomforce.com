@@ -10,7 +10,7 @@ export function TalentCTA() {
     <section id="talent" ref={ref} className="bg-navy-dark py-24 md:py-36">
       <div className="mx-auto max-w-7xl px-6 text-center">
         <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-teal">
+          <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
             For Talent
           </p>
           <h2 className="mx-auto max-w-2xl font-display text-4xl leading-tight text-foreground md:text-5xl">
@@ -20,7 +20,7 @@ export function TalentCTA() {
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
             Whether you're a consultant between projects, a full-time hire looking for
-            your next seat, or a leader ready to run the whole show — we work with
+            your next seat, or a leader ready to run the whole show, we work with
             healthcare IT professionals at every level. No generic job boards. No blind
             submissions. Just specialists talking to specialists.
           </p>
@@ -41,13 +41,13 @@ export function TalentCTA() {
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              href="#for-talent"
+              href="mailto:hello@bloomforce.com?subject=Joining%20the%20Bloomforce%20Network"
               className="inline-flex items-center justify-center rounded-full bg-teal px-8 py-4 text-sm font-semibold text-white transition-all hover:brightness-110"
             >
               Join Our Network
             </a>
             <a
-              href="#for-talent-jobs"
+              href="mailto:hello@bloomforce.com?subject=Open%20Roles"
               className="inline-flex items-center justify-center rounded-full border border-foreground/20 px-8 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/5"
             >
               View Open Roles →
