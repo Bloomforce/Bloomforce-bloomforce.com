@@ -13,7 +13,7 @@ const practices = [
     subtitle: "STAFF AUGMENTATION",
     description: "Healthcare IT specialists embedded with your team. Analysts, engineers, architects, PMs, and trainers — placed in days, not months.",
     features: [
-      { label: "Team Augmentation", desc: "Scale capacity across any role" },
+      { label: "Staff Augmentation", desc: "Scale capacity across any role" },
       { label: "Contract-to-Hire", desc: "Try the fit before you commit" },
       { label: "Interim Coverage", desc: "Hold the line while you search" },
     ],
