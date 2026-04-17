@@ -12,6 +12,11 @@ import {
   Brain,
   Cloud,
   ClipboardList,
+  Clock,
+  GraduationCap,
+  Target,
+  TrendingUp,
+  ListChecks,
 } from "lucide-react";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Navbar } from "@/components/Navbar";
@@ -26,7 +31,7 @@ export const Route = createFileRoute("/staffing")({
       {
         name: "description",
         content:
-          "Healthcare IT staff augmentation across every role and practice area. Analysts, engineers, architects, PMs, and trainers embedded with your team in days.",
+          "Hard-to-find healthcare IT skills, on your team. Staff augmentation across analysts, engineers, architects, PMs, trainers, and more.",
       },
     ],
   }),
@@ -44,14 +49,14 @@ function StaffingHero() {
             Practice 01 · Staffing
           </p>
           <h1 className="font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
-            Your team, extended with
+            Hard-to-find skills,
             <br />
-            <em className="text-teal">the right healthcare IT people.</em>
+            <em className="text-teal">on your team.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
-            Staff augmentation across every role: analysts, engineers, architects, project
-            managers, trainers, and more. We embed vetted specialists directly into your
-            team — usually in days — so you can scale capacity without sacrificing quality.
+            We embed vetted healthcare IT specialists directly into your team — analysts,
+            engineers, architects, project managers, trainers, and more. Usually in days,
+            always people who've done this work before.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
@@ -78,25 +83,44 @@ function StaffingHero() {
    ───────────────────────────────────────────── */
 const useCases = [
   {
-    icon: Zap,
-    title: "Scale Your Team Fast",
-    body:
-      "You have more work than headcount. Whether it's a new initiative, a growing backlog, or a capacity gap across multiple roles, we place specialists who plug in and contribute from day one.",
-    examples: "Analysts · Engineers · Architects · PMs · Trainers",
+    icon: Users,
+    title: "Scale Your Team",
+    desc: "Add capacity across roles without the overhead of full-time hiring.",
   },
   {
-    icon: Users,
+    icon: Zap,
     title: "Backfill & Coverage",
-    body:
-      "A key person is out on leave, resigned unexpectedly, or got pulled onto another initiative. We fill the gap fast so your projects keep moving and your team doesn't burn out covering the shortfall.",
-    examples: "Parental leave · Unexpected resignation · Interim coverage",
+    desc: "Someone left or is on leave. We keep your projects moving while you figure out the permanent plan.",
   },
   {
     icon: Repeat,
     title: "Contract-to-Hire",
-    body:
-      "You're ready to add full-time headcount, but you want to see the person on the job before you commit. Start them as a contractor, convert when it clicks, part ways cleanly if it doesn't.",
-    examples: "Try-before-you-buy · FTE conversion · Reduced hiring risk",
+    desc: "See the person on the job before you commit. Convert when it clicks, part ways cleanly if it doesn't.",
+  },
+  {
+    icon: Clock,
+    title: "Part-Time Support",
+    desc: "Fractional specialists for when you need the skill but not a full-time seat.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Knowledge Transfer",
+    desc: "Bring in expertise to upskill your internal team, then step back when they're ready.",
+  },
+  {
+    icon: Target,
+    title: "Specialized Expertise",
+    desc: "Niche certifications and skill sets your team doesn't carry — placed in days, not months.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Surge Support",
+    desc: "Big initiative ramping up and you need people fast. We staff the ramp so your team stays focused.",
+  },
+  {
+    icon: ListChecks,
+    title: "Backlog Relief",
+    desc: "The queue keeps growing and your team can't get ahead. We put people on it until it's clear.",
   },
 ];
 
@@ -118,25 +142,22 @@ function UseCases() {
             How Teams Use Us
           </p>
           <h2 className="font-display text-4xl leading-tight text-ink md:text-5xl">
-            Three ways to augment. <em className="text-teal">One standard of quality.</em>
+            Eight ways to augment. <em className="text-teal">One standard of quality.</em>
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {useCases.map((uc, i) => (
             <div
               key={uc.title}
-              className={`rounded-xl border border-ink/10 bg-white p-8 transition-all duration-700 ${
+              className={`rounded-xl border border-ink/10 bg-white px-6 py-5 transition-all duration-700 hover:border-teal/30 hover:shadow-md ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
-              style={{ transitionDelay: `${(i + 1) * 120}ms` }}
+              style={{ transitionDelay: `${(i + 1) * 80}ms` }}
             >
-              <uc.icon className="mb-4 h-7 w-7 text-teal" />
-              <h3 className="font-display text-2xl text-ink">{uc.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{uc.body}</p>
-              <p className="mt-5 font-mono text-[10px] uppercase tracking-wider text-ink/40">
-                {uc.examples}
-              </p>
+              <uc.icon className="mb-3 h-5 w-5 text-teal" />
+              <h3 className="text-base font-semibold text-ink">{uc.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{uc.desc}</p>
             </div>
           ))}
         </div>
