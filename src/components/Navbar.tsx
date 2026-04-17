@@ -10,14 +10,14 @@ const practices = [
   {
     icon: Briefcase,
     title: "Staffing",
-    subtitle: "CONTRACT & CONTRACT-TO-HIRE",
-    description: "Specialist consultants for projects that can't slow down. Go-lives, migrations, stabilizations, backfill. On-site in days, not months.",
+    subtitle: "STAFF AUGMENTATION",
+    description: "Healthcare IT specialists embedded with your team. Analysts, engineers, architects, PMs, and trainers — placed in days, not months.",
     features: [
-      { label: "Go-Live & Project Surge", desc: "Teams ready in under two weeks" },
+      { label: "Team Augmentation", desc: "Scale capacity across any role" },
       { label: "Contract-to-Hire", desc: "Try the fit before you commit" },
       { label: "Interim Coverage", desc: "Hold the line while you search" },
     ],
-    cta: "Need help on a live project?",
+    cta: "Need to scale your team?",
     href: "/staffing",
   },
   {

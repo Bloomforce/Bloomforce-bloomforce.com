@@ -26,7 +26,7 @@ export const Route = createFileRoute("/staffing")({
       {
         name: "description",
         content:
-          "Healthcare IT staffing built for the projects that can't slow down. Specialist consultants on the ground in days. Go-lives, migrations, backfill, and contract-to-hire.",
+          "Healthcare IT staff augmentation across every role and practice area. Analysts, engineers, architects, PMs, and trainers embedded with your team in days.",
       },
     ],
   }),
@@ -44,14 +44,14 @@ function StaffingHero() {
             Practice 01 · Staffing
           </p>
           <h1 className="font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
-            Specialist consultants for
+            Your team, extended with
             <br />
-            <em className="text-teal">the projects that can't slow down.</em>
+            <em className="text-teal">the right healthcare IT people.</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
-            Go-lives, migrations, stabilizations, and backfill. When the timeline won't
-            move and the work has to get done, we put vetted healthcare IT specialists on
-            the ground. Usually in days, always by people who've done this work before.
+            Staff augmentation across every role: analysts, engineers, architects, project
+            managers, trainers, and more. We embed vetted specialists directly into your
+            team — usually in days — so you can scale capacity without sacrificing quality.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
@@ -79,16 +79,16 @@ function StaffingHero() {
 const useCases = [
   {
     icon: Zap,
-    title: "Project Surge",
+    title: "Scale Your Team Fast",
     body:
-      "You have a go-live in six weeks and three critical seats open. You need builders, analysts, or trainers who can ramp in days, not people who need a month of context before they're useful.",
-    examples: "Epic go-lives · ERP cutovers · ServiceNow rollouts",
+      "You have more work than headcount. Whether it's a new initiative, a growing backlog, or a capacity gap across multiple roles, we place specialists who plug in and contribute from day one.",
+    examples: "Analysts · Engineers · Architects · PMs · Trainers",
   },
   {
     icon: Users,
     title: "Backfill & Coverage",
     body:
-      "A key person is out on leave, resigned unexpectedly, or got pulled onto another initiative. You need to hold the line until you can run a real hire without dropping the ball in the meantime.",
+      "A key person is out on leave, resigned unexpectedly, or got pulled onto another initiative. We fill the gap fast so your projects keep moving and your team doesn't burn out covering the shortfall.",
     examples: "Parental leave · Unexpected resignation · Interim coverage",
   },
   {
@@ -115,10 +115,10 @@ function UseCases() {
           }`}
         >
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
-            Who It's For
+            How Teams Use Us
           </p>
           <h2 className="font-display text-4xl leading-tight text-ink md:text-5xl">
-            Three kinds of problems. <em className="text-teal">One kind of fix.</em>
+            Three ways to augment. <em className="text-teal">One standard of quality.</em>
           </h2>
         </div>
 

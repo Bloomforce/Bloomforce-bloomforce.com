@@ -5,8 +5,8 @@ const practices = [
   {
     icon: Briefcase,
     title: "Staffing",
-    tag: "Contract & Contract-to-Hire",
-    desc: "Specialist consultants for projects that can't slow down. Go-lives, migrations, stabilizations, backfill. On-site in days, not months.",
+    tag: "Staff Augmentation",
+    desc: "Healthcare IT specialists embedded with your team. Analysts, engineers, architects, PMs, and trainers — placed in days, not months.",
     href: "/staffing",
   },
   {
