@@ -75,8 +75,8 @@ export function HeroSection() {
   const float2 = phase2 * 4;
 
   return (
-    <section ref={ref} className="relative" style={{ height: "220vh" }}>
-      <div className="sticky top-0 flex min-h-0 items-center overflow-hidden bg-cream pt-4 pb-4" style={{ height: "85vh" }}>
+    <section ref={ref} className="relative h-auto lg:h-[220vh]">
+      <div className="lg:sticky lg:top-0 flex items-center overflow-hidden bg-cream py-16 lg:py-4 lg:h-[85vh]">
         <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-bl from-teal/4 to-transparent" />
         <div
           className="pointer-events-none absolute bottom-16 right-16 h-80 w-80 rounded-full blur-[120px]"
@@ -92,7 +92,7 @@ export function HeroSection() {
               <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
                 Healthcare IT Staffing & Search
               </p>
-              <h1 className="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl">
+              <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-7xl lg:text-8xl">
                 Making healthcare IT
                 <br />
                 <em className="text-teal">work better.</em>

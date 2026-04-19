@@ -125,10 +125,10 @@ export function TestimonialSection() {
                 {/* Collapsed row — always visible */}
                 <button
                   onClick={() => toggle(i)}
-                  className="flex w-full items-center gap-6 px-8 py-6 text-left md:px-10 md:py-7"
+                  className="flex w-full items-center gap-4 px-4 py-5 text-left sm:gap-6 sm:px-8 sm:py-6 md:px-10 md:py-7"
                 >
                   {/* Client identity */}
-                  <div className="flex w-36 shrink-0 items-center md:w-44">
+                  <div className="flex w-20 shrink-0 items-center sm:w-36 md:w-44">
                     {logo && !c.useFallback ? (
                       <img
                         src={logo}
@@ -165,7 +165,7 @@ export function TestimonialSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-8 pb-8 md:px-10 md:pb-10">
+                    <div className="px-4 pb-6 sm:px-8 sm:pb-8 md:px-10 md:pb-10">
                       {/* Separator */}
                       <div className="mb-6 h-px w-full bg-ink/[0.06]" />
 
@@ -214,7 +214,7 @@ export function TestimonialSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <div className="flex flex-col items-start gap-6 px-8 py-8 md:flex-row md:items-center md:gap-10 md:px-10 md:py-9">
+          <div className="flex flex-col items-start gap-6 px-4 py-6 sm:px-8 sm:py-8 md:flex-row md:items-center md:gap-10 md:px-10 md:py-9">
             {/* Left: eyebrow + headline, mirroring the client+hook structure of the rows above */}
             <div className="flex-1">
               <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.2em] text-teal">

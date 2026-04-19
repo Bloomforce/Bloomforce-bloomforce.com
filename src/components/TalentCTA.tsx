@@ -7,7 +7,7 @@ export function TalentCTA() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="talent" ref={ref} className="bg-navy-dark py-24 md:py-36">
+    <section id="talent" ref={ref} className="bg-navy-dark py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 text-center">
         <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">

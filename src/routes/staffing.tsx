@@ -48,7 +48,7 @@ function StaffingHero() {
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
             Practice 01 · Staffing
           </p>
-          <h1 className="font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
+          <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-7xl">
             Hard-to-find skills,
             <br />
             <em className="text-teal">on your team.</em>
@@ -218,7 +218,7 @@ function ComparisonTable() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="bg-cream py-24 md:py-36">
+    <section ref={ref} className="bg-cream py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div
           className={`mb-14 max-w-3xl transition-all duration-1000 ${
@@ -379,7 +379,7 @@ function HowItWorks() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="how-it-works" ref={ref} className="bg-navy-dark py-24 md:py-36">
+    <section id="how-it-works" ref={ref} className="bg-navy-dark py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div
           className={`mb-16 max-w-3xl transition-all duration-1000 ${
@@ -410,7 +410,7 @@ function HowItWorks() {
             >
               <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-teal bg-navy-dark" />
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6">
-                <span className="font-display text-6xl text-teal/20 md:text-8xl">
+                <span className="font-display text-5xl text-teal/20 md:text-8xl">
                   {phase.num}
                 </span>
                 <div>

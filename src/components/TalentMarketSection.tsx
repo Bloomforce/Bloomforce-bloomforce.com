@@ -119,12 +119,10 @@ export function TalentMarketSection() {
     <section
       id="talent-market"
       ref={sectionRef}
-      className="relative"
-      style={{ height: "420vh" }}
+      className="relative h-auto md:h-[420vh]"
     >
       <div
-        className="sticky top-0 flex flex-col justify-center overflow-hidden bg-navy-dark"
-        style={{ height: "100vh" }}
+        className="md:sticky md:top-0 flex flex-col justify-center overflow-hidden bg-navy-dark py-16 md:py-0 md:h-screen"
       >
         {/* Ambient glow — follows active card accent */}
         <div
@@ -252,11 +250,6 @@ export function TalentMarketSection() {
           {/* ──── Mobile: vertical cards ──── */}
           <div
             className="space-y-4 md:hidden"
-            style={{
-              opacity: cardReveal,
-              transform: `translateY(${(1 - cardReveal) * 24}px)`,
-              transition: "opacity 0.4s, transform 0.4s",
-            }}
           >
             {eras.map((e) => (
               <div
@@ -289,8 +282,8 @@ export function TalentMarketSection() {
           <div
             className="mt-10 max-w-3xl md:mt-14"
             style={{
-              opacity: closingP,
-              transform: `translateY(${(1 - closingP) * 24}px)`,
+              opacity: viewportW < 768 ? 1 : closingP,
+              transform: viewportW < 768 ? 'none' : `translateY(${(1 - closingP) * 24}px)`,
             }}
           >
             <p className="font-display text-2xl leading-snug text-foreground md:text-4xl lg:text-5xl">

@@ -8,7 +8,7 @@ export function ThesisSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="thesis" ref={ref} className="bg-cream py-24 md:py-36">
+    <section id="thesis" ref={ref} className="bg-cream py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-4xl px-6">
         <div
           className={`transition-all duration-1000 ${

@@ -15,7 +15,7 @@ export function ReportBlock() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="report" ref={ref} className="relative overflow-hidden bg-navy-dark py-24 md:py-36">
+    <section id="report" ref={ref} className="relative overflow-hidden bg-navy-dark py-16 md:py-24 lg:py-36">
       {/* Ambient glow */}
       <div className="pointer-events-none absolute right-0 top-1/2 h-[600px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-teal/[0.06] blur-[120px]" />
 

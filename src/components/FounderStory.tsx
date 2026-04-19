@@ -10,7 +10,7 @@ export function FounderStory() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="founder" ref={ref} className="bg-background py-24 md:py-36">
+    <section id="founder" ref={ref} className="bg-background py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-5xl px-6">
         <div
           className={`mb-16 transition-all duration-1000 ${

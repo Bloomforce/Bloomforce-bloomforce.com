@@ -98,9 +98,9 @@ export function SiteFooter() {
       {/* Footer */}
       <footer className="border-t border-ink/10 bg-navy-dark py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-10 md:grid-cols-6">
+          <div className="grid grid-cols-2 gap-8 sm:gap-10 md:grid-cols-6">
             {/* Logo + tagline column */}
-            <div className="md:col-span-1">
+            <div className="col-span-2 md:col-span-1">
               <img src={logoWhite} alt="Bloomforce" className="h-7 opacity-90" />
               <p className="mt-4 text-xs leading-relaxed text-muted-foreground/80">
                 Healthcare IT talent.

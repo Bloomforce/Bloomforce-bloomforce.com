@@ -4,7 +4,7 @@ export function BookCallCTA() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="book-a-call" ref={ref} className="bg-cream py-28 md:py-40">
+    <section id="book-a-call" ref={ref} className="bg-cream py-16 md:py-28 lg:py-40">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <div
           className={`transition-all duration-1000 ${
@@ -14,7 +14,7 @@ export function BookCallCTA() {
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.25em] text-teal">
             Next Step
           </p>
-          <h2 className="font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
+          <h2 className="font-display text-4xl leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-7xl">
             Twenty minutes.
             <br />
             <em className="text-teal">Zero slides.</em>
